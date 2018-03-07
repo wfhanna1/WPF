@@ -9,7 +9,7 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <StackPanel Orientation="Vertical">
-        <Label Content="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0 20 0 50"/>
+        <Label Content="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 25 0 50"/>
         <ListView ItemsSource="{Binding Personal}">
             <ListView.View>
                 <GridView>
@@ -45,6 +45,15 @@
             </ListView.View>
         </ListView>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="1" MinWidth="150" Content="{Binding BackButtonText}" Command="{Binding BackButtonCommand}" Margin="0 50 0 0"/>
         </Grid>
     </StackPanel>
 </UserControl>

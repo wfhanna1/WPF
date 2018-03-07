@@ -37,7 +37,7 @@ namespace SampleWPF.Module.ViewModels
             _regionManager = regionManager;
 
             welcome = "Welcome to this sample app";
-            nextButtonText = "Next Screen";
+            nextButtonText = "Next";
             NextButtonDelegateCommand = new DelegateCommand(NextScreen);
         }
 
