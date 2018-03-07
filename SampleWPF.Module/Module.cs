@@ -3,6 +3,8 @@ using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
 using SampleWPF.Common;
+using SampleWPF.Common.Helpers;
+using SampleWPF.Common.Interfaces;
 using SampleWPF.Module.Views;
 using System;
 using System.Collections.Generic;
@@ -30,6 +32,7 @@ namespace SampleWPF.Module
             _regionManager.RegisterViewWithRegion("ContentRegion", typeof(Welcome));
             _container.RegisterTypeForNavigation<University>();
             _container.RegisterTypeForNavigation<Welcome>();
+            _container.RegisterType<IMockData, MockData>();
         }
     }
 }
