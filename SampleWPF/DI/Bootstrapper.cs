@@ -2,6 +2,7 @@
 using Prism.Unity;
 using SampleWPF.Views;
 using Microsoft.Practices.Unity;
+using Prism.Modularity;
 
 namespace SampleWPF.DI
 {
@@ -18,18 +19,11 @@ namespace SampleWPF.DI
             Application.Current.MainWindow.Show();
         }
 
-        //protected override void ConfigureModuleCatalog()
-        //{
-        //    base.ConfigureModuleCatalog();
-        //    ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
-        //    // moduleCatalog.AddModule(x);
-        //    // moduleCatalog.AddModule(y);
-        //    // moduleCatalog.AddModule(z);
-        //}
-        //protected override void ConfigureContainer()
-        //{
-        //    base.ConfigureContainer();
-        //    Container.RegisterInstance<>();
-        //}
+        protected override void ConfigureModuleCatalog()
+        {
+            base.ConfigureModuleCatalog();
+            var moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
+            moduleCatalog.AddModule(typeof(Module.Module));
+        }
     }
 }
